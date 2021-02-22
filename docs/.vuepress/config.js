@@ -169,7 +169,9 @@ module.exports = {
           '/guide/kismet/03_trigger',
           '/guide/kismet/04_tagame',
           '/guide/kismet/05_sound',
-          '/guide/kismet/06_advanced'
+          '/guide/kismet/06_level_streaming',
+          '/guide/kismet/07_data_reference',
+          '/guide/kismet/08_advanced'
         ]
       },
 

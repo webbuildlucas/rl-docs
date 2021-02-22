@@ -1,7 +1,7 @@
 ---
 title: Documentation
 ---
-# TAGame Kismet Nodes
+# Kismet
 
 ## UDK
 
