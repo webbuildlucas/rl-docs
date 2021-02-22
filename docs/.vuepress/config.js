@@ -244,6 +244,7 @@ module.exports = {
           'contact',
           'about',
           'roadmap',
+          'map_contests',
           'contribute',
           'psyonix'
         ]
@@ -378,6 +379,10 @@ module.exports = {
           {
             text: 'Roadmap',
             link: '/more/roadmap'
+          },
+          {
+            text: 'Map contests',
+            link: '/more/map_contests'
           },
           {
             text: 'Contribute',

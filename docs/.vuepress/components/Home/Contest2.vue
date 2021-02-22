@@ -9,7 +9,7 @@
     </div>
 
     <div class='guide-intro'>
-      <img src='../../public/images/rlmmc2.png' alt='Old is New'></img>
+      <img src='../../public/images/home/rlmmc2.png' alt='Old is New'></img>
     </div>
   </section>
 </template>
