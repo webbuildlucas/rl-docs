@@ -121,7 +121,7 @@ module.exports = {
           '/guide/udk/11_volumes',
           '/guide/udk/12_boost',
           '/guide/udk/13_interlude_next',
-          '/guide/udk/14_interlude_test'
+          '/guide/udk/14_interlude_archetypes'
           
         ]
       },
@@ -155,7 +155,13 @@ module.exports = {
           '/guide/udk/18_matinee',
           '/guide/udk/19_kactors',
           '/guide/udk/20_skeletal_mesh',
-          '/guide/udk/21_extra_modes'
+          '/guide/udk/21_extra_modes',
+          '/guide/udk/22_fxactors',
+          '/guide/udk/23_interfaces',
+          '/guide/udk/24_physics',
+          '/guide/udk/25_particles',
+          '/guide/udk/26_crowds',
+          '/guide/udk/27_rendering'
         ]
       },
 
@@ -227,7 +233,8 @@ module.exports = {
           '/guide/misc/05_geometry_editor',
           '/guide/misc/06_bots',
           '/guide/misc/07_ghostplugin',
-          '/guide/misc/08_custom_udk'
+          '/guide/misc/08_custom_udk',
+          '/guide/misc/09_custom_rl'
         ]
       }
     ],
