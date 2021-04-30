@@ -1,0 +1,4202 @@
+[
+    {
+        "name": "Add Game Ball",
+        "class": "SeqAct_AddGameBall_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "This action is used to modify the (amount of) balls in the map",
+        "properties": [
+            {
+                "name": "SpawnedBall",
+                "type": "Ball_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnTransform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "PlacedBall",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bWake",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "BallArchetype",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": "Reference to the archetype of the ball to spawn"
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Add",
+                    "description": "Activating this input causes a ball to spawn"
+                },
+                {
+                    "name": "Destroy",
+                    "description": ""
+                },
+                {
+                    "name": "DestroyAll",
+                    "description": "Activating this input destroys all balls"
+                },
+                {
+                    "name": "Wake",
+                    "description": ""
+                },
+                {
+                    "name": "AddPlacedBall",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Added",
+                    "description": "Activates when a ball has been spawned"
+                },
+                {
+                    "name": "Destroyed",
+                    "description": "Activates when a ball has been destroyed"
+                },
+                {
+                    "name": "DestroyedAll",
+                    "description": "Activates when all balls have been destroyed"
+                },
+                {
+                    "name": "Awake",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "SpawnTransform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "Set the spawn location of the ball",
+                    "output": false
+                },
+                {
+                    "name": "SpawnedBall",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "PlacedBall",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Apply Car Products",
+        "class": "SeqAct_ApplyCarProducts_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Assets",
+                "type": "array<ProductAsset_TA>",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TeamColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "AccentColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "TeamFinish",
+                "type": "ProductAsset_PaintFinish_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CustomFinish",
+                "type": "ProductAsset_PaintFinish_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CarPreviewActor",
+                "type": "CarPreviewActor_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "CarPreviewActor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Attach Asset to Car",
+        "class": "SeqAct_AttachAssetToCar_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "StaticMeshToAttach",
+                "type": "StaticMesh",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SkeletalMeshToAttach",
+                "type": "SkeletalMesh",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ParticleSystemToAttach",
+                "type": "ParticleSystem",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "BoneToAttachTo",
+                "type": "name",
+                "edit": true,
+                "default": "chassis_jnt",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Attach FX",
+        "class": "SeqAct_AttachFX_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "PSC",
+                "type": "ParticleSystemComponent",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Add",
+                    "description": ""
+                },
+                {
+                    "name": "Remove",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Out",
+                    "description": ""
+                },
+                {
+                    "name": "Added",
+                    "description": ""
+                },
+                {
+                    "name": "Removed",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Check Rotation Angle",
+        "class": "SeqAct_CheckRotationAngle_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Actor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CheckActor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "RotationAngle",
+                "type": "float",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "LastRotation",
+                "type": "Rotator",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "LastDirection",
+                "type": "float",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CheckAxis",
+                "type": "Vector",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TurnAxis",
+                "type": "Vector",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MaxRotationAngle",
+                "type": "float",
+                "edit": true,
+                "default": "360.0",
+                "description": null
+            },
+            {
+                "name": "bResetOnDirectionChange",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "AxisDirection",
+                "type": "SeqAct_CheckRotationAngle_TA.ECheckAxis",
+                "edit": true,
+                "default": "ECheckAxis.ECA_Yaw",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Check",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Completed",
+                    "description": ""
+                },
+                {
+                    "name": "Aborted",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Actor To Check",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Complete FTE Checkpoint",
+        "class": "SeqAct_CompleteFTECheckpoint_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "CheckpointName",
+                "type": "string",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "CheckpointName",
+                    "expectedClass": "Class'Engine.SeqVar_String'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Control Car Movement",
+        "class": "SeqAct_ControlCarMovement_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Enable",
+                    "description": ""
+                },
+                {
+                    "name": "Disable",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Enabled",
+                    "description": ""
+                },
+                {
+                    "name": "Disabled",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Counter",
+        "class": "SeqAct_Counter_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "MaxCount",
+                "type": "int",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Enable",
+                    "description": ""
+                },
+                {
+                    "name": "Disable",
+                    "description": ""
+                },
+                {
+                    "name": "Increment Score",
+                    "description": ""
+                },
+                {
+                    "name": "Increment Round",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Out",
+                    "description": ""
+                },
+                {
+                    "name": "Hit Max Score",
+                    "description": ""
+                },
+                {
+                    "name": "Hit Max Round",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Create Attach Component",
+        "class": "SeqAct_CreateAttachComponent_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "AttachTo",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "AttachingComponent",
+                "type": "ActorComponent_X",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "AttachTo",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Demo Car",
+        "class": "SeqAct_DemoCar_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Disable Force Feedback in FXActor",
+        "class": "SeqAct_DisableForceInFXActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "InFXActor",
+                "type": "FXActor_X",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "FX Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Display Message",
+        "class": "SeqAct_DisplayMessage_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "This actions is used to show the player a message with a title and description. If enabled, two buttons are shown",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Title",
+                "type": "string",
+                "edit": true,
+                "default": "Title",
+                "description": "The title of the message"
+            },
+            {
+                "name": "Body",
+                "type": "string",
+                "edit": true,
+                "default": "Body",
+                "description": "The description of the message"
+            },
+            {
+                "name": "bShowButtonOne",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": "If checked, the first button will be shown"
+            },
+            {
+                "name": "bShowButtonTwo",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": "If checked, the second button will be shown"
+            },
+            {
+                "name": "ButtonOneTitle",
+                "type": "string",
+                "edit": true,
+                "default": "Continue",
+                "description": "The text for the first button"
+            },
+            {
+                "name": "ButtonTwoTitle",
+                "type": "string",
+                "edit": true,
+                "default": "Skip",
+                "description": "The text for the second button"
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Set",
+                    "description": "Activating this input causes the message to show"
+                }
+            ],
+            "output": [
+                {
+                    "name": "Button One Clicked",
+                    "description": "Activates when the player clickes the first button"
+                },
+                {
+                    "name": "Button Two Clicked",
+                    "description": "Activates when the player clickes the second button"
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Drive Spline",
+        "class": "SeqAct_DriveSpline_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "ForwardOffset",
+                "type": "float",
+                "edit": true,
+                "default": "500.0",
+                "description": null
+            },
+            {
+                "name": "Spline",
+                "type": "SplineActor",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Throttle",
+                "type": "float",
+                "edit": true,
+                "default": "1.0",
+                "description": null
+            },
+            {
+                "name": "bDebug",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Cars",
+                "type": "array<CarSplineData>",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Out",
+                    "description": ""
+                },
+                {
+                    "name": "Finished",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Spline",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Dump Movie",
+        "class": "SeqAct_DumpMovie_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                },
+                {
+                    "name": "Stop",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Exit To Main Menu",
+        "class": "SeqAct_ExitToMainMenu_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Explode Game Ball",
+        "class": "SeqAct_ExplodeGameBall_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": [
+                {
+                    "name": "Blue",
+                    "description": ""
+                },
+                {
+                    "name": "Orange",
+                    "description": ""
+                },
+                {
+                    "name": "None",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Game URL Has Option",
+        "class": "SeqAct_GameURLHasOption_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Option",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Has Option",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "False",
+                    "description": ""
+                },
+                {
+                    "name": "True",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Detail Mode",
+        "class": "SeqAct_GetDetailMode_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": [
+                {
+                    "name": "Get",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "DM_Low",
+                    "description": ""
+                },
+                {
+                    "name": "DM_Medium",
+                    "description": ""
+                },
+                {
+                    "name": "DM_High",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Effect Intensity",
+        "class": "SeqAct_GetEffectIntensity_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": [
+                {
+                    "name": "Get",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Default",
+                    "description": ""
+                },
+                {
+                    "name": "Low",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get FTE State",
+        "class": "SeqAct_GetFTEState_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "CheckpointName",
+                "type": "string",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bIsActive",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "CheckpointName",
+                    "expectedClass": "Class'Engine.SeqVar_String'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "bIsActive",
+                    "expectedClass": "Class'Engine.SeqVar_Bool'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Game Ball",
+        "class": "SeqAct_GetGameBall_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Ball",
+                "type": "Object",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Has Ball",
+                    "description": ""
+                },
+                {
+                    "name": "No Ball",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Ball",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Player Car",
+        "class": "SeqAct_GetPlayerCar_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "PlayerName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "FoundActor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Found Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Team Score",
+        "class": "SeqAct_GetTeamScore_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "TeamIndex",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TeamScore",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Team Index",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Team Score",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Get Weather Enabled",
+        "class": "SeqAct_GetWeatherEnabled_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "bEnabled",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Enabled",
+                    "description": ""
+                },
+                {
+                    "name": "Disabled",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Enabled",
+                    "expectedClass": "Class'Engine.SeqVar_Bool'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Give Boost",
+        "class": "SeqAct_GiveBoost_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "BoostAmount",
+                "type": "float",
+                "edit": true,
+                "default": "33.0",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Give Boost Amount",
+                    "description": ""
+                },
+                {
+                    "name": "Give Super Boost",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Instance Material",
+        "class": "SeqAct_InstanceMaterial_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "MaterialInstance",
+                "type": "MaterialInstanceConstant",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SK",
+                "type": "SkeletalMeshActor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SM",
+                "type": "StaticMeshActor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "InstancedMaterial",
+                "type": "MaterialInstanceConstant",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MatIndex",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Static Mesh Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Material Index",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Instanced Material",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "Skeletal Mesh Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Is Action Pressed",
+        "class": "SeqAct_IsActionPressed_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ActionName",
+                "type": "name",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Check",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "True",
+                    "description": ""
+                },
+                {
+                    "name": "False",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Is Human Player",
+        "class": "SeqAct_IsHumanPlayer_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Target",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Check",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "True",
+                    "description": ""
+                },
+                {
+                    "name": "False",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Target",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Is Target In Player Camera View",
+        "class": "SeqAct_IsTargetInPlayerCameraView",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Target",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MaxConeAngle",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Check",
+                    "description": ""
+                },
+                {
+                    "name": "Stop",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Out",
+                    "description": ""
+                },
+                {
+                    "name": "Target Is In View",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Target",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Load Map",
+        "class": "SeqAct_LoadMap_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Map",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Look At Actor",
+        "class": "SeqAct_LookAtActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Actor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ActorToLookAt",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "InterpSpeed",
+                "type": "float",
+                "edit": true,
+                "default": "3.0",
+                "description": null
+            },
+            {
+                "name": "bConstantInterpSpeed",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUpdating",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                },
+                {
+                    "name": "Stop",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "ActorToLookAt",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Main Menu Switch",
+        "class": "SeqAct_MainMenuSwitch_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Default",
+                    "description": ""
+                },
+                {
+                    "name": "Utopia Snow",
+                    "description": ""
+                },
+                {
+                    "name": "Haunted Station",
+                    "description": ""
+                },
+                {
+                    "name": "Beach",
+                    "description": ""
+                },
+                {
+                    "name": "Beach Night",
+                    "description": ""
+                },
+                {
+                    "name": "Halloween",
+                    "description": ""
+                },
+                {
+                    "name": "China",
+                    "description": ""
+                },
+                {
+                    "name": "Park Day",
+                    "description": ""
+                },
+                {
+                    "name": "Music",
+                    "description": ""
+                },
+                {
+                    "name": "Throwback Hockey",
+                    "description": ""
+                },
+                {
+                    "name": "Stadium Circuit",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "MatchCountdown",
+        "class": "SeqAct_MatchCountdown_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "CountdownTime",
+                "type": "int",
+                "edit": true,
+                "default": "3",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Move Actor",
+        "class": "SeqAct_MoveActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Actor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MoveTransform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "InterpSpeed",
+                "type": "float",
+                "edit": true,
+                "default": "3.0",
+                "description": null
+            },
+            {
+                "name": "bConstantInterpSpeed",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bMove",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Finished Move",
+                    "description": ""
+                },
+                {
+                    "name": "Aborted",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "MoveTransform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Reinitialize RB Physics",
+        "class": "SeqAct_ReinitPhys_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "RBObj",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "RB Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Rotate Actor",
+        "class": "SeqAct_RotateActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Actor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "RotateTransform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "InterpSpeed",
+                "type": "float",
+                "edit": true,
+                "default": "3.0",
+                "description": null
+            },
+            {
+                "name": "bConstantInterpSpeed",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUpdating",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "RotateTolerance",
+                "type": "float",
+                "edit": true,
+                "default": "0.10",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "RotateTransform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Screen Fade",
+        "class": "SeqAct_ScreenFade_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "FadeColor",
+                "type": "Color",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "FadeTime",
+                "type": "float",
+                "edit": true,
+                "default": "0.30",
+                "description": null
+            },
+            {
+                "name": "bFadeAudio",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Enable",
+                    "description": ""
+                },
+                {
+                    "name": "Disable",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Enabled",
+                    "description": ""
+                },
+                {
+                    "name": "Disabled",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set BallCam Target",
+        "class": "SeqAct_SetBallCamTarget_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Target",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Instigator",
+                "type": "PlayerController_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bForceBallCamTarget",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Enable",
+                    "description": ""
+                },
+                {
+                    "name": "Disable",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Target",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Ball Material",
+        "class": "SeqAct_SetBallMaterial_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Ball",
+                "type": "Ball_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Material",
+                "type": "MaterialInterface",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MaterialID",
+                "type": "int",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Set",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Set",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Ball",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Breakout Ball Charge",
+        "class": "SeqAct_SetBreakoutBallCharge_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "BallObj",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Charge",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Team",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Breakout Ball",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Charge",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "Team",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Breakout Platform Damage",
+        "class": "SeqAct_SetBreakoutTileDamage_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "PlatformObj",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Damage",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Breakout Platform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Damage",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Car Transform",
+        "class": "SeqAct_SetCarTransform_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Transform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Set",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Transform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Green Screen",
+        "class": "SeqAct_SetGreenScreen_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "ColorToUse",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "On",
+                    "description": ""
+                },
+                {
+                    "name": "Off",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Loadout",
+        "class": "SeqAct_SetLoadout_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Products",
+                "type": "array<ProductAsset_TA>",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ProductsWithPaint",
+                "type": "array<ProductWithSettings>",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TeamFinish",
+                "type": "ProductAsset_PaintFinish_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "AccentFinish",
+                "type": "ProductAsset_PaintFinish_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUseInGameColors",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "bOverwriteCurrent",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUseDefaultLoadout",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bApplyToAllCars",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TeamColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "AccentColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "ForcedTeamOverride",
+                "type": "SeqAct_SetLoadout_TA.EForcedTeamOverride",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "BodyPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SkinPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "WheelPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "BoostPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SSTrailPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "AntennaPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "HatPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "GoalExplosionPaint",
+                "type": "ProductPaint_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ParentCar",
+                "type": "Car_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set VectorParam",
+        "class": "SeqAct_SetMatInstParam_Vector",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "ParamName",
+                "type": "name",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "MatInstActor",
+                "type": "MaterialInstanceActor",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "VectorValue",
+                "type": "Vector",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "VectorValue",
+                    "expectedClass": "Class'Engine.SeqVar_Vector'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "MatInstActor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set VectorParam MatInst",
+        "class": "SeqAct_SetMatInstVectorParam_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "MatInst",
+                "type": "MaterialInstanceConstant",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ParamName",
+                "type": "name",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "VectorValue",
+                "type": "Vector",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "VectorValue",
+                    "expectedClass": "Class'Engine.SeqVar_Vector'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "MatInstValue",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Scalar Parameter on Static Meshes",
+        "class": "SeqAct_SetMeshMaterialScalarParameter_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "MeshList",
+                "type": "array<Object>",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ParamName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ScalarValue",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Meshes",
+                    "expectedClass": "Class'Engine.SeqVar_ObjectList'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "ScalarValue",
+                    "expectedClass": "Class'Engine.SeqVar_Float'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "ParamName",
+                    "expectedClass": "Class'Engine.SeqVar_String'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Nameplate",
+        "class": "SeqAct_SetNameplate_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "LocalizedPlayerName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Finished",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Post Process",
+        "class": "SeqAct_SetPostProcess_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Chains",
+                "type": "array<PostProcessChain>",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bReplaceCurrentChain",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Replay Camera",
+        "class": "SeqAct_SetReplayCamera_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "FocusActor",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "LocationOffset",
+                "type": "Vector",
+                "edit": true,
+                "default": "(X=-300.0,Y=0.0,Z=75.0)",
+                "description": null
+            },
+            {
+                "name": "Rotation",
+                "type": "Rotator",
+                "edit": true,
+                "default": "(Pitch=-3000,Yaw=0,Roll=0)",
+                "description": null
+            },
+            {
+                "name": "FOV",
+                "type": "float",
+                "edit": true,
+                "default": "90.0",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Replay FX",
+        "class": "SeqAct_SetReplayFX_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "FocusDistance",
+                "type": "float",
+                "edit": true,
+                "default": "100.0",
+                "description": null
+            },
+            {
+                "name": "FocusBlur",
+                "type": "int",
+                "edit": true,
+                "default": "2",
+                "description": null
+            },
+            {
+                "name": "FocusStrength",
+                "type": "float",
+                "edit": true,
+                "default": "100.0",
+                "description": null
+            },
+            {
+                "name": "bUseGreenScreen",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUseVignetteOverlay",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "GreenScreenColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=1.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "ImageFilterIndex",
+                "type": "Engine.Engine.EImageFilterOptions",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ImageFilterIntensity",
+                "type": "float",
+                "edit": true,
+                "default": "1.0",
+                "description": null
+            },
+            {
+                "name": "Vignette",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "On",
+                    "description": ""
+                },
+                {
+                    "name": "Off",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Stadium Team Colors",
+        "class": "SeqAct_SetStadiumTeamColors_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "BlueColors",
+                "type": "array<LinearColor>",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "OrangeColors",
+                "type": "array<LinearColor>",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Time Dilation",
+        "class": "SeqAct_SetTimeDilation_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "VfTable_FTickableObject",
+                "type": "Pointer",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bUseCurve",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bActivated",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CurrentTime",
+                "type": "float",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "EndTime",
+                "type": "float",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SlomoValue",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SlomoCurve",
+                "type": "RawDistributionFloat",
+                "edit": true,
+                "default": "(Distribution=DistributionFloatConstantCurve'Default__SeqAct_SetTimeDilation_TA.DistributionVelOverLife',Type=0,Op=1,LookupTableNumElements=1,LookupTableChunkSize=1,LookupTable=(0.0,0.0,0.0,0.0),LookupTableTimeScale=0.0,LookupTableStartTime=0.0)",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Tutorial Tip",
+        "class": "SeqAct_SetTutorialTip_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Tip",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ActionNames",
+                "type": "array<name>",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Set Vehicle Input",
+        "class": "SeqAct_SetVehicleInput_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Input",
+                "type": "VehicleInputs",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawn Actor",
+        "class": "SeqAct_SpawnActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "ActorArchetype",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Transform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnedActor",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Actor Archetype",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Transform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Spawned Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawn Bot",
+        "class": "SeqAct_SpawnBot_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "SpawnedBot",
+                "type": "Car_TA",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnTransform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SkillLevel",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bDisableAllLogic",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bCollideWithBall",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "bCollideWithVehicle",
+                "type": "bool",
+                "edit": true,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "TeamIndex",
+                "type": "int",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Spawn",
+                    "description": ""
+                },
+                {
+                    "name": "Destroy",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Spawned",
+                    "description": ""
+                },
+                {
+                    "name": "Destroyed",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Spawned Bot",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "Spawn Transform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawn Car Colors",
+        "class": "SeqAct_SpawnCarColors_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "AccentColors",
+                "type": "SpawnCarColorSet",
+                "edit": true,
+                "default": "(ColorSet=none,bRender=true)",
+                "description": null
+            },
+            {
+                "name": "AccentTeamColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "BlueTeamColors",
+                "type": "SpawnCarColorSet",
+                "edit": true,
+                "default": "(ColorSet=none,bRender=true)",
+                "description": null
+            },
+            {
+                "name": "OrangeTeamColors",
+                "type": "SpawnCarColorSet",
+                "edit": true,
+                "default": "(ColorSet=none,bRender=true)",
+                "description": null
+            },
+            {
+                "name": "TeamAccentColor",
+                "type": "LinearColor",
+                "edit": true,
+                "default": "(R=0.0,G=0.0,B=0.0,A=1.0)",
+                "description": null
+            },
+            {
+                "name": "Body",
+                "type": "ProductAsset_Body_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Skin",
+                "type": "ProductAsset_Skin_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "CarYaw",
+                "type": "int",
+                "edit": true,
+                "default": "-90",
+                "description": null
+            },
+            {
+                "name": "CarOffsetX",
+                "type": "float",
+                "edit": true,
+                "default": "100.0",
+                "description": null
+            },
+            {
+                "name": "CarOffsetY",
+                "type": "float",
+                "edit": true,
+                "default": "200.0",
+                "description": null
+            },
+            {
+                "name": "SetOffsetY",
+                "type": "float",
+                "edit": true,
+                "default": "300.0",
+                "description": null
+            },
+            {
+                "name": "BaseOffsetY",
+                "type": "float",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawn FXActor",
+        "class": "SeqAct_SpawnFXActor_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "VfTable_FTickableObject",
+                "type": "Pointer",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "FXActor",
+                "type": "FXActor_X",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Transform",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Location",
+                "type": "Vector",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Rotation",
+                "type": "Rotator",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "ActorToSpawnOn",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnedFXActor",
+                "type": "FXActor_X",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Paint",
+                "type": "ProductPaint_TA",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "PaintParameterNames",
+                "type": "name",
+                "edit": true,
+                "default": "CustomColor",
+                "description": null
+            },
+            {
+                "name": "bTickable",
+                "type": "bool",
+                "edit": false,
+                "default": "true",
+                "description": null
+            },
+            {
+                "name": "BallLocMic",
+                "type": "MaterialInstanceConstant",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Actor to Spawn On",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "FXActor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Transform",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Spawned FXActor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Start Tutorial",
+        "class": "SeqAct_StartTutorial_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Instigator",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "TutorialName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Start",
+                    "description": ""
+                },
+                {
+                    "name": "StartSkipFade",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Ended",
+                    "description": ""
+                },
+                {
+                    "name": "Completed",
+                    "description": ""
+                },
+                {
+                    "name": "Failed",
+                    "description": ""
+                },
+                {
+                    "name": "Screen Faded In",
+                    "description": ""
+                },
+                {
+                    "name": "Screen Faded Out",
+                    "description": ""
+                },
+                {
+                    "name": "All Messages Displayed",
+                    "description": ""
+                },
+                {
+                    "name": "Started",
+                    "description": ""
+                },
+                {
+                    "name": "Reset",
+                    "description": ""
+                },
+                {
+                    "name": "Skipped",
+                    "description": ""
+                },
+                {
+                    "name": "Answer Right",
+                    "description": ""
+                },
+                {
+                    "name": "Answer Wrong",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Terminate RB Physics",
+        "class": "SeqAct_TermPhys_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "RBObj",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "RB Actor",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Toggle UI Overlay",
+        "class": "SeqAct_ToggleUIOverlay_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "UIOverlayName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Enable",
+                    "description": ""
+                },
+                {
+                    "name": "Disable",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Enabled",
+                    "description": ""
+                },
+                {
+                    "name": "Disabled",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "UpdateAd",
+        "class": "SeqAct_UpdateAd_TA",
+        "package": "TAGame",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "MeshActor",
+                "type": "StaticMeshActor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Mesh",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Ball In Range",
+        "class": "SeqEvent_BallInRange_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Enter Range",
+                    "description": ""
+                },
+                {
+                    "name": "Exit Range",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Car Spawned",
+        "class": "SeqEvent_CarSpawned_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "PlayerName",
+                "type": "string",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Car Touch Ball",
+        "class": "SeqEvent_CarTouchBall_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "bOneTouchOnly",
+                "type": "bool",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "On Touch",
+                    "description": ""
+                },
+                {
+                    "name": "Already Touched",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Ball",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Car",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "CountDown Completed",
+        "class": "SeqEvent_CountDownCompleted_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "End CountDown",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "CountDown Start",
+        "class": "SeqEvent_CountDownStart_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Start CountDown",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "GameEvent State Changed",
+        "class": "SeqEvent_GameEventStateChanged_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "StateName",
+                "type": "string",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "State Name",
+                    "expectedClass": "Class'Engine.SeqVar_String'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Game Time Changed",
+        "class": "SeqEvent_GameTimeChanged_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "CallTimePercent",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "bHasBeenCalled",
+                "type": "bool",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Call Time Percent",
+                    "expectedClass": "Class'Engine.SeqVar_Float'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Goal Scored",
+        "class": "SeqEvent_GoalScored_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Blue",
+                    "description": ""
+                },
+                {
+                    "name": "Red",
+                    "description": ""
+                },
+                {
+                    "name": "Kill Effects",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Input Sequence",
+        "class": "SeqEvent_InputSequence_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "SequenceName",
+                "type": "name",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Activated",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Name",
+                    "expectedClass": "Class'Engine.SeqVar_Name'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Live Replay Start",
+        "class": "SeqEvent_LiveReplay_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Live Replay Started",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Main Menu Switched",
+        "class": "SeqEvent_MainMenuSwitched_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "PrevBackground",
+                "type": "_Types_TA.EMainMenuBackground",
+                "edit": false,
+                "default": "EMainMenuBackground.None",
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Changed",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Podium Start",
+        "class": "SeqEvent_PodiumStart_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Start",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Preview Goal Explosion",
+        "class": "SeqEvent_PreviewGoalExplosion_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "FXInstance",
+                "type": "FXActor_X",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Start",
+                    "description": ""
+                },
+                {
+                    "name": "Stop",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Explosion FXActor Instance",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Round Start",
+        "class": "SeqEvent_RoundStart_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "Start Round",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Score Changed",
+        "class": "SeqEvent_ScoreChanged_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "BlueScore",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "RedScore",
+                "type": "int",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Blue Score",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Red Score",
+                    "expectedClass": "Class'Engine.SeqVar_Int'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Stadium Team Colors Changed",
+        "class": "SeqEvent_StadiumTeamColorsChanged_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "Team",
+                "type": "int",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Primary",
+                "type": "Vector",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Secondary",
+                "type": "Vector",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Primary",
+                    "expectedClass": "Class'Engine.SeqVar_Vector'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Secondary",
+                    "expectedClass": "Class'Engine.SeqVar_Vector'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "UI State Change",
+        "class": "SeqEvent_UIStateChange_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "UIState",
+                "type": "_Types_TA.EUIMenuState",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": [
+                {
+                    "name": "StartMenu",
+                    "description": ""
+                },
+                {
+                    "name": "MainMenu",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "User Setting Changed",
+        "class": "SeqEvent_UserSettingChanged_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "SettingName",
+                "type": "name",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Weather Toggled",
+        "class": "SeqEvent_WeatherToggled_TA",
+        "package": "TAGame",
+        "type": "event",
+        "description": "",
+        "properties": [],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Engine.SeqVar_Object",
+                    "output": false,
+                    "description": null
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawn Archetype",
+        "class": "SeqAct_SpawnArchetype_X",
+        "package": "ProjectX",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "ActorArchetype",
+                "type": "Actor",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Velocity",
+                "type": "Vector",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Speed",
+                "type": "float",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnOwners",
+                "type": "array<Actor>",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "SpawnPoints",
+                "type": "array<Actor>",
+                "edit": false,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "Spawned",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Spawn",
+                    "description": ""
+                },
+                {
+                    "name": "Destroy",
+                    "description": ""
+                }
+            ],
+            "output": [
+                {
+                    "name": "Spawned",
+                    "description": ""
+                },
+                {
+                    "name": "Destroyed",
+                    "description": ""
+                }
+            ],
+            "variable": [
+                {
+                    "name": "Spawn Point",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Spawn Owner",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "Spawned",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "Trigger FXActor",
+        "class": "SeqAct_TriggerFXActor_X",
+        "package": "ProjectX",
+        "type": "action",
+        "description": "",
+        "properties": [
+            {
+                "name": "Event",
+                "type": "FXActorEvent_X",
+                "edit": true,
+                "default": null,
+                "description": null
+            },
+            {
+                "name": "AttachTo",
+                "type": "Actor",
+                "edit": true,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": [
+                {
+                    "name": "Push",
+                    "description": ""
+                },
+                {
+                    "name": "Pop",
+                    "description": ""
+                },
+                {
+                    "name": "Toggle",
+                    "description": ""
+                }
+            ],
+            "output": null,
+            "variable": [
+                {
+                    "name": "Target",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                },
+                {
+                    "name": "AttachTo",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": false
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spawned",
+        "class": "SeqEvent_Spawned_X",
+        "package": "ProjectX",
+        "type": "event",
+        "description": "",
+        "properties": [
+            {
+                "name": "Spawned",
+                "type": "Actor",
+                "edit": false,
+                "default": null,
+                "description": null
+            }
+        ],
+        "links": {
+            "input": null,
+            "output": null,
+            "variable": [
+                {
+                    "name": "Instigator",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                },
+                {
+                    "name": "Spawned",
+                    "expectedClass": "Class'Engine.SeqVar_Object'",
+                    "description": "",
+                    "output": true
+                }
+            ]
+        }
+    }
+]
