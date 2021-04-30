@@ -4,7 +4,11 @@ import Contest2 from './components/Home/Contest2'
 import Socials from './components/Home/Socials'
 import Footer from './components/Footer'
 import FlowChart from './components/FlowChart'
-import KismetNodes from './components/KismetSelect'
+
+import KismetNodeList from './components/Kismet/NodeList.vue';
+import KismetNodeSearch from './components/Kismet/NodeSearch.vue';
+import KismetNodeProperty from './components/Kismet/NodeProperty.vue';
+import KismetNode from './components/Kismet/Node.vue';
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -21,7 +25,11 @@ export default ({
   Vue.component('FooterComponent', Footer)
 
   Vue.component('FlowChartComponent', FlowChart)
-  Vue.component('KismetNode', KismetNodes)
+
+  Vue.component('KismetNodeProperty', KismetNodeProperty);
+  Vue.component('KismetNode', KismetNode);
+  Vue.component('KismetNodeList', KismetNodeList);
+  Vue.component('KismetNodeSearch', KismetNodeSearch);
 
 
 }
