@@ -10,7 +10,8 @@ module.exports = {
     resolve: {
       alias: {
         '@images': '/docs/.vuepress/public/images/',
-        '@icons': '/docs/.vuepress/public/icons/'
+        '@icons': '/docs/.vuepress/public/icons/',
+        vue: 'vue/dist/vue.js'
       }
     }
   },
